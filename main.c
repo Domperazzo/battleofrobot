@@ -1,5 +1,3 @@
-//Venturoli Federico 866691
-
 /*questo programma presi in input le posizioni dei robot e l'intervallo di tempo scelto
  dall'utente tramite l'equazione x(t)=x0+vt calcola la posizione successiva, in funzione di
  dove è situato il robot target*/
@@ -186,7 +184,10 @@ int main(int argc, const char * argv[]) {
     coordinata_t A, B, C;
     inizializzo_double(A, B, C);
     
-    double vettore_coordinate[k][6];
+ double **vettore_coordinate=(double**)malloc(k*sizeof(double*));
+    for (int i=0; i<k; i=i+1) {
+        vettore_coordinate[i]=(double*)malloc(6*sizeof(double*));
+    }
     
     scanf("%lf %lf %lf %lf %lf %lf", &A.x, &A.y, &B.x, &B.y, &C.x, &C.y);
     
